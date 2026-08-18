@@ -896,3 +896,38 @@ tbody tr.superset-b { background: rgba(206,17,38,0.06); border-bottom: 2px solid
   color: var(--gray-600);
   font-family: monospace;
 }
+
+/* --- Equipment tier tabs (recomp program day pages) --- */
+.tier-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.tier-tab {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border: 2px solid var(--gray-300, #d1d5db);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--gray-600, #4b5563);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tier-tab:hover { border-color: var(--navy, #003459); }
+.tier-tab.active {
+  background: var(--navy, #003459);
+  border-color: var(--navy, #003459);
+  color: #fff;
+}
+.tier-panel { display: none; }
+.tier-panel.active { display: block; }
+.tier-blurb {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gray-600, #4b5563);
+  margin-bottom: 1rem;
+}

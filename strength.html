@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Strength Day | DB Cut Program</title>
+  <title>Push-Lead Upper | DB Recomp Program</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -27,25 +27,26 @@
   </nav>
   <div class="subnav">
     <div class="subnav-inner">
-      <a href="dumbbell.html">Overview</a>
-      <a href="strength.html" class="active">Strength (M)</a>
-      <a href="hypertrophy.html">Hypertrophy (W)</a>
-      <a href="metabolic.html">Metabolic (F)</a>
-      <a href="db-exercises.html">Exercises</a>
-      <a href="db-progression.html">Progression</a>
+        <a href="dumbbell.html">Overview</a>
+        <a href="strength.html" class="active">A &middot; Push (M)</a>
+        <a href="hypertrophy.html">B &middot; Pull (W)</a>
+        <a href="metabolic.html">C &middot; Detail (F)</a>
+        <a href="legs.html">Legs (Sat)</a>
+        <a href="db-exercises.html">Exercises</a>
+        <a href="db-progression.html">Progression</a>
     </div>
   </div>
 
   <main>
     <section class="day-hero strength">
       <div class="container">
-        <div class="day-tag">Monday &mdash; Strength &amp; Preservation</div>
-        <h1>Strength Workout</h1>
+        <div class="day-tag">Monday &mdash; Session A</div>
+        <h1>Push-Lead Upper</h1>
         <div class="day-info">
-          <div class="day-info-item"><strong>Goal:</strong> Keep your muscle &mdash; lift heavy enough that your body holds size while fat comes off</div>
+          <div class="day-info-item"><strong>Goal:</strong> Add upper-body muscle. This is the heavy day, and heavy is what actually builds the shape.</div>
           <div class="day-info-item"><strong>Rest:</strong> 90-120 sec between sets</div>
           <div class="day-info-item"><strong>Tempo:</strong> 3-1-1 (3s down, 1s pause, 1s up)</div>
-          <div class="day-info-item"><strong>Time:</strong> ~55-60 minutes</div>
+          <div class="day-info-item"><strong>Time:</strong> ~50-55 minutes</div>
         </div>
       </div>
     </section>
@@ -53,200 +54,425 @@
     <section class="section">
       <div class="container">
         <p style="text-align:center; color:var(--gray-600); margin-bottom:1.5rem; font-size:0.9rem;">
-          This is the day that protects everything you've built. Pick loads where the <strong>last 1-2 reps are genuinely hard</strong> &mdash; that effort is the signal that tells your body to keep its muscle in a deficit. Upper body leads; one leg primer keeps the engine running.
+          The heaviest session of the week. Pick loads where the <strong>last 1-2 reps are genuinely hard</strong> and add weight or reps whenever you can. On a recomp at maintenance calories, this day is where the new muscle comes from.
         </p>
 
-        <!-- Main lifting block -->
-        <div class="table-wrap">
+        <div class="tier-tabs">
+          <button class="tier-tab active" data-tier="full">Dumbbells + Bench</button>
+          <button class="tier-tab" data-tier="dbonly">Dumbbells, No Bench</button>
+          <button class="tier-tab" data-tier="band">Bands Only</button>
+          <button class="tier-tab" data-tier="bw">No Equipment</button>
+        </div>
+
+        <div class="tier-panel active" data-tier="full">
+          <p class="tier-blurb"><strong>Dumbbells + Bench.</strong> The default. Every movement at full range.</p>
+          <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th colspan="7" class="circuit-header">Block 1 &mdash; Strength Lifts (Straight Sets)</th>
-              </tr>
-              <tr>
-                <th>#</th>
-                <th>Exercise</th>
-                <th>Sets x Reps</th>
-                <th>Weight</th>
-                <th>Rest</th>
-                <th>Notes</th>
-                <th>Demo</th>
+                <th>#</th><th>Exercise</th><th>Sets x Reps</th><th>Load</th><th>Rest</th><th>Notes</th><th>Demo</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td class="exercise-name">Goblet Squat <span style="font-size:0.7rem;color:var(--gray-600);">(leg primer)</span></td>
-                <td><strong>3 x 10</strong></td>
-                <td>Moderate</td>
-                <td>90s</td>
-                <td>One DB at chest, full depth. Wakes up the legs and core to start.</td>
-                <td><a href="db-exercises.html#goblet-squat" class="demo-link">Form Cues</a></td>
-              </tr>
-              <tr>
-                <td>2</td>
                 <td class="exercise-name">Incline DB Press (30&deg;)</td>
                 <td><strong>4 x 6-8</strong></td>
                 <td>Heavy</td>
                 <td>120s</td>
-                <td>Your heaviest press. Lower to chest, 1-sec pause, drive to lockout.</td>
+                <td>Your heaviest press. Lower to the chest, 1-sec pause, drive to lockout.</td>
                 <td><a href="db-exercises.html#incline-press" class="demo-link">Form Cues</a></td>
               </tr>
               <tr>
-                <td>3</td>
-                <td class="exercise-name">One-Arm DB Row</td>
-                <td><strong>4 x 8/arm</strong></td>
+                <td>2</td>
+                <td class="exercise-name">Chest-Supported Row</td>
+                <td><strong>4 x 8-10</strong></td>
                 <td>Heavy</td>
                 <td>90s</td>
-                <td>Hand and knee on bench. Pull to hip, squeeze shoulder blade 1 sec.</td>
-                <td><a href="db-exercises.html#one-arm-row" class="demo-link">Form Cues</a></td>
+                <td>Face-down on the incline bench. Strict, no momentum, squeeze 1 sec.</td>
+                <td><a href="db-exercises.html#chest-supported-row" class="demo-link">Form Cues</a></td>
               </tr>
               <tr>
-                <td>4</td>
+                <td>3</td>
                 <td class="exercise-name">Flat DB Bench Press</td>
                 <td><strong>3 x 8-10</strong></td>
                 <td>Heavy</td>
                 <td>90s</td>
-                <td>Mid-chest mass. Lower with control, deep stretch, press together at top.</td>
+                <td>Deep stretch at the bottom, press the dumbbells together at the top.</td>
                 <td><a href="db-exercises.html#flat-press" class="demo-link">Form Cues</a></td>
               </tr>
               <tr>
-                <td>5</td>
-                <td class="exercise-name">Chest-Supported Row</td>
-                <td><strong>3 x 10</strong></td>
-                <td>Moderate-Heavy</td>
+                <td>4</td>
+                <td class="exercise-name">One-Arm DB Row</td>
+                <td><strong>3 x 8/arm</strong></td>
+                <td>Heavy</td>
                 <td>90s</td>
-                <td>Face-down on incline bench. Strict back work, no momentum.</td>
-                <td><a href="db-exercises.html#chest-supported-row" class="demo-link">Form Cues</a></td>
+                <td>Hand and knee on bench. Pull to the hip, full stretch at the bottom.</td>
+                <td><a href="db-exercises.html#one-arm-row" class="demo-link">Form Cues</a></td>
               </tr>
               <tr>
-                <td>6</td>
+                <td>5</td>
                 <td class="exercise-name">Seated Overhead Press</td>
                 <td><strong>3 x 8</strong></td>
                 <td>Moderate-Heavy</td>
                 <td>90s</td>
-                <td>Press straight up to lockout. Brace core, no excess back arch.</td>
+                <td>Press straight up to lockout. Brace the core, no excess back arch.</td>
                 <td><a href="db-exercises.html#oh-press" class="demo-link">Form Cues</a></td>
               </tr>
               <tr>
-                <td>7</td>
-                <td class="exercise-name">DB Romanian Deadlift</td>
-                <td><strong>3 x 10</strong></td>
-                <td>Moderate</td>
-                <td>90s</td>
-                <td>Hinge at hips, soft knees. DBs slide down thighs. Feel hamstring stretch.</td>
-                <td><a href="db-exercises.html#rdl" class="demo-link">Form Cues</a></td>
-              </tr>
-              <tr class="superset-a">
-                <td>8a</td>
-                <td class="exercise-name"><span class="superset-label">SS</span>Hammer Curl</td>
-                <td><strong>3 x 10</strong></td>
-                <td>Moderate</td>
-                <td>&mdash;</td>
-                <td>Neutral grip. No swing &mdash; biceps and forearms do the work.</td>
-                <td><a href="db-exercises.html#hammer-curl" class="demo-link">Form Cues</a></td>
-              </tr>
-              <tr class="superset-b">
-                <td>8b</td>
-                <td class="exercise-name"><span class="superset-label">SS</span>Skull Crusher</td>
+                <td>6</td>
+                <td class="exercise-name">Skull Crusher</td>
                 <td><strong>3 x 10</strong></td>
                 <td>Moderate</td>
                 <td>75s</td>
-                <td>Lying tricep extension. Lower DBs beside head, extend to lockout.</td>
+                <td>Lower beside the head, elbows tucked, extend to lockout.</td>
                 <td><a href="db-exercises.html#skull-crusher" class="demo-link">Form Cues</a></td>
               </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Core block -->
-        <div class="table-wrap">
-          <table>
-            <thead>
               <tr>
-                <th colspan="6" class="circuit-header circuit-b">Block 2 &mdash; Core (2-3 Rounds, 30s Rest Between Rounds)</th>
+                <td>7</td>
+                <td class="exercise-name">Incline Curl</td>
+                <td><strong>3 x 10</strong></td>
+                <td>Moderate</td>
+                <td>75s</td>
+                <td>Bench at 45&deg;, arms hanging back. Full biceps stretch, no swing.</td>
+                <td><a href="db-exercises.html#incline-curl" class="demo-link">Form Cues</a></td>
               </tr>
               <tr>
-                <th>#</th>
-                <th>Exercise</th>
-                <th>Reps / Time</th>
-                <th>Load</th>
-                <th>Notes</th>
-                <th>Demo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>9a</td>
+                <td>8</td>
                 <td class="exercise-name">Weighted Crunch</td>
-                <td><strong>15</strong></td>
+                <td><strong>3 x 12</strong></td>
                 <td>DB on chest</td>
-                <td>Slow and controlled. Crunch the ribs toward the hips, don't yank the neck.</td>
+                <td>45s</td>
+                <td>Loaded and slow. If 12 is easy, add weight, not reps.</td>
                 <td><a href="db-exercises.html#weighted-crunch" class="demo-link">Form Cues</a></td>
               </tr>
               <tr>
-                <td>9b</td>
-                <td class="exercise-name">Lying Leg Raise</td>
-                <td><strong>12</strong></td>
-                <td>Bodyweight</td>
-                <td>Lower legs slowly, keep low back pressed to the floor. Lower abs.</td>
-                <td><a href="db-exercises.html#leg-raise" class="demo-link">Form Cues</a></td>
-              </tr>
-              <tr>
-                <td>9c</td>
-                <td class="exercise-name">Plank</td>
-                <td><strong>45 sec</strong></td>
-                <td>Bodyweight</td>
-                <td>Straight line head to heels. Squeeze abs and glutes the whole time.</td>
-                <td><a href="db-exercises.html#plank" class="demo-link">Form Cues</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Finisher -->
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th colspan="6" class="circuit-header finisher">Block 3 &mdash; Finisher</th>
-              </tr>
-              <tr>
-                <th>#</th>
-                <th>Exercise</th>
-                <th>Sets x Time</th>
-                <th>Weight</th>
-                <th>Rest</th>
-                <th>Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>10</td>
+                <td>9</td>
                 <td class="exercise-name">Farmer's Walk</td>
                 <td><strong>3 x 40 sec</strong></td>
                 <td>Heaviest DBs</td>
                 <td>45s</td>
-                <td>Walk tall, shoulders back, core braced. Grip, traps, and conditioning in one.</td>
+                <td>Walk tall, shoulders back. Grip, traps, and conditioning in one.</td>
+                <td><a href="db-exercises.html#farmers-walk" class="demo-link">Form Cues</a></td>
               </tr>
             </tbody>
           </table>
+          </div>
+        </div>
+        <div class="tier-panel" data-tier="dbonly">
+          <p class="tier-blurb"><strong>Dumbbells, No Bench.</strong> Floor presses replace incline and flat. Same stimulus, shorter range at the bottom.</p>
+          <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th><th>Exercise</th><th>Sets x Reps</th><th>Load</th><th>Rest</th><th>Notes</th><th>Demo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td class="exercise-name">DB Floor Press</td>
+                <td><strong>4 x 8</strong></td>
+                <td>Heavy</td>
+                <td>120s</td>
+                <td>Lie on the floor, upper arms touch down, pause, press. Safest heavy press with no bench.</td>
+                <td><a href="db-exercises.html#flat-press" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td class="exercise-name">Bent-Over Two-DB Row</td>
+                <td><strong>4 x 10</strong></td>
+                <td>Heavy</td>
+                <td>90s</td>
+                <td>Hinge to 45&deg;, flat back. Row both DBs to the ribs, squeeze 1 sec.</td>
+                <td><a href="db-exercises.html#chest-supported-row" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="exercise-name">DB Floor Fly</td>
+                <td><strong>3 x 12</strong></td>
+                <td>Light-Moderate</td>
+                <td>75s</td>
+                <td>Wide arc, slight elbow bend. Upper arms kiss the floor, squeeze at the top.</td>
+                <td><a href="db-exercises.html#chest-fly" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="exercise-name">One-Arm DB Row</td>
+                <td><strong>3 x 8/arm</strong></td>
+                <td>Heavy</td>
+                <td>90s</td>
+                <td>Free hand on your knee or a chair. Pull to the hip, no twisting.</td>
+                <td><a href="db-exercises.html#one-arm-row" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="exercise-name">Standing Overhead Press</td>
+                <td><strong>3 x 8</strong></td>
+                <td>Moderate-Heavy</td>
+                <td>90s</td>
+                <td>Squeeze glutes and brace hard. Standing makes the core work too.</td>
+                <td><a href="db-exercises.html#oh-press" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td class="exercise-name">OH Tricep Extension</td>
+                <td><strong>3 x 10</strong></td>
+                <td>Moderate</td>
+                <td>75s</td>
+                <td>One DB, both hands, full stretch behind the head.</td>
+                <td><a href="db-exercises.html#oh-ext" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td class="exercise-name">Standing DB Curl</td>
+                <td><strong>3 x 10</strong></td>
+                <td>Moderate</td>
+                <td>75s</td>
+                <td>Elbows pinned to your sides. Control the lowering.</td>
+                <td><a href="db-exercises.html#incline-curl" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td class="exercise-name">Weighted Crunch</td>
+                <td><strong>3 x 12</strong></td>
+                <td>DB on chest</td>
+                <td>45s</td>
+                <td>Loaded and slow. Add weight before you add reps.</td>
+                <td><a href="db-exercises.html#weighted-crunch" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td class="exercise-name">Farmer's Walk</td>
+                <td><strong>3 x 40 sec</strong></td>
+                <td>Heaviest DBs</td>
+                <td>45s</td>
+                <td>Walk tall, shoulders back, core braced.</td>
+                <td><a href="db-exercises.html#farmers-walk" class="demo-link">Form Cues</a></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="tier-panel" data-tier="band">
+          <p class="tier-blurb"><strong>Bands Only.</strong> Anchor the band in a door hinge. Log the band's rated pounds as your weight.</p>
+          <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th><th>Exercise</th><th>Sets x Reps</th><th>Load</th><th>Rest</th><th>Notes</th><th>Demo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td class="exercise-name">Band Chest Press</td>
+                <td><strong>4 x 12</strong></td>
+                <td>Heavy band</td>
+                <td>90s</td>
+                <td>Band behind your back, press forward and slightly in. Squeeze at lockout.</td>
+                <td><a href="db-exercises.html#band-chest-press" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td class="exercise-name">Band Seated Row</td>
+                <td><strong>4 x 12</strong></td>
+                <td>Heavy band</td>
+                <td>90s</td>
+                <td>Anchor at chest height. Row to the ribs, pull the shoulder blades together.</td>
+                <td><a href="db-exercises.html#band-row" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="exercise-name">Band Incline Press</td>
+                <td><strong>3 x 12</strong></td>
+                <td>Moderate band</td>
+                <td>75s</td>
+                <td>Anchor low, press up and forward at a 30&deg; angle. Upper chest.</td>
+                <td><a href="db-exercises.html#band-chest-press" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="exercise-name">Band One-Arm Row</td>
+                <td><strong>3 x 12/arm</strong></td>
+                <td>Moderate band</td>
+                <td>75s</td>
+                <td>One side at a time, full stretch, pull to the hip.</td>
+                <td><a href="db-exercises.html#band-row" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="exercise-name">Band Overhead Press</td>
+                <td><strong>3 x 12</strong></td>
+                <td>Moderate band</td>
+                <td>75s</td>
+                <td>Stand on the band, press overhead to lockout.</td>
+                <td><a href="db-exercises.html#band-oh-press" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td class="exercise-name">Band Tricep Pushdown</td>
+                <td><strong>3 x 15</strong></td>
+                <td>Light band</td>
+                <td>60s</td>
+                <td>Anchor high. Elbows pinned, extend fully, squeeze at the bottom.</td>
+                <td><a href="db-exercises.html#band-pushdown" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td class="exercise-name">Band Curl</td>
+                <td><strong>3 x 12</strong></td>
+                <td>Moderate band</td>
+                <td>60s</td>
+                <td>Stand on the band. Elbows still, full range.</td>
+                <td><a href="db-exercises.html#band-curl" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td class="exercise-name">Band Crunch</td>
+                <td><strong>3 x 15</strong></td>
+                <td>Light band</td>
+                <td>45s</td>
+                <td>Anchor high behind you, crunch the ribs to the hips against the band.</td>
+                <td><a href="db-exercises.html#band-crunch" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td class="exercise-name">Hollow Body Hold</td>
+                <td><strong>3 x 30 sec</strong></td>
+                <td>Bodyweight</td>
+                <td>45s</td>
+                <td>Low back pinned to the floor. Arms and legs long. Shake is normal.</td>
+                <td><a href="db-exercises.html#hollow-hold" class="demo-link">Form Cues</a></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="tier-panel" data-tier="bw">
+          <p class="tier-blurb"><strong>No Equipment.</strong> Hotel room. Bed, desk, door, towel. Log reps, chase more of them each time.</p>
+          <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th><th>Exercise</th><th>Sets x Reps</th><th>Load</th><th>Rest</th><th>Notes</th><th>Demo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td class="exercise-name">Decline Push-Up</td>
+                <td><strong>4 x 12</strong></td>
+                <td>Feet on the bed</td>
+                <td>90s</td>
+                <td>Feet elevated shifts load to the upper chest and shoulders. Slow down, chest to floor.</td>
+                <td><a href="db-exercises.html#decline-push-up" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td class="exercise-name">Door-Handle Row</td>
+                <td><strong>4 x 12</strong></td>
+                <td>Bodyweight</td>
+                <td>90s</td>
+                <td>Both handles of a solid door, towel over the top edge. Feet forward, lean back, row your chest to the door.</td>
+                <td><a href="db-exercises.html#door-row" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="exercise-name">Push-Up</td>
+                <td><strong>3 x 15</strong></td>
+                <td>Bodyweight</td>
+                <td>75s</td>
+                <td>Full range, chest to the floor, body in one line. 3 seconds down.</td>
+                <td><a href="db-exercises.html#push-up" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="exercise-name">Towel Row (one arm)</td>
+                <td><strong>3 x 12/arm</strong></td>
+                <td>Bodyweight</td>
+                <td>75s</td>
+                <td>Towel round a door handle, one hand, lean back and pull. Lean further to make it harder.</td>
+                <td><a href="db-exercises.html#towel-row" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td class="exercise-name">Pike Push-Up</td>
+                <td><strong>3 x 10</strong></td>
+                <td>Feet on the bed</td>
+                <td>75s</td>
+                <td>Hips high, head between the hands. The best shoulder press you can do with nothing.</td>
+                <td><a href="db-exercises.html#pike-push-up" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td class="exercise-name">Bed-Edge Dip</td>
+                <td><strong>3 x 15</strong></td>
+                <td>Bodyweight</td>
+                <td>60s</td>
+                <td>Hands on the bed edge behind you, feet out. Elbows straight back, not flared.</td>
+                <td><a href="db-exercises.html#bed-dip" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td class="exercise-name">Towel Curl</td>
+                <td><strong>3 x 12</strong></td>
+                <td>Self-resisted</td>
+                <td>60s</td>
+                <td>Towel under one foot, curl against your own downward pull. 4 seconds up, 4 down.</td>
+                <td><a href="db-exercises.html#towel-curl" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td class="exercise-name">Hollow Body Hold</td>
+                <td><strong>3 x 30 sec</strong></td>
+                <td>Bodyweight</td>
+                <td>45s</td>
+                <td>Low back pinned, arms and legs long.</td>
+                <td><a href="db-exercises.html#hollow-hold" class="demo-link">Form Cues</a></td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td class="exercise-name">Suitcase Carry</td>
+                <td><strong>3 x 40 sec</strong></td>
+                <td>Loaded bag</td>
+                <td>45s</td>
+                <td>Pack the carry-on heavy. One hand, walk tall, don't lean.</td>
+                <td><a href="db-exercises.html#farmers-walk" class="demo-link">Form Cues</a></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
         </div>
 
-        <div class="total-reps">~28 working sets + core circuit &mdash; heavy loads, the day that keeps your muscle</div>
+        <div class="total-reps">29 sets &mdash; chest 7, back 7, delts 3, arms 6, core 3</div>
 
         <div class="day-nav">
           <a href="dumbbell.html">&larr; Overview</a>
-          <a href="hypertrophy.html">Hypertrophy &rarr;</a>
+          <a href="hypertrophy.html">B &middot; Pull-Lead &rarr;</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>RD's Workout &mdash; Science-Based Training &mdash; <strong>June 2026</strong></p>
+    <p>RD's Workout &mdash; Science-Based Training &mdash; <strong>August 2026</strong></p>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.tier-tab').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var tier = btn.dataset.tier;
+        document.querySelectorAll('.tier-tab').forEach(function (b) { b.classList.toggle('active', b === btn); });
+        document.querySelectorAll('.tier-panel').forEach(function (p) { p.classList.toggle('active', p.dataset.tier === tier); });
+        try { localStorage.setItem('rdTier', tier); } catch (e) {}
+      });
+    });
+    try {
+      var saved = localStorage.getItem('rdTier');
+      if (saved) { var b = document.querySelector('.tier-tab[data-tier="' + saved + '"]'); if (b) b.click(); }
+    } catch (e) {}
+  </script>
 </body>
 </html>
