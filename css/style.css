@@ -931,3 +931,26 @@ tbody tr.superset-b { background: rgba(206,17,38,0.06); border-bottom: 2px solid
   color: var(--gray-600, #4b5563);
   margin-bottom: 1rem;
 }
+
+/* --- The Rack Rule callout (effort-anchored prescription) --- */
+.rack-rule {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  box-shadow: none;
+  margin-bottom: 1.5rem;
+}
+.rack-rule h3 { color: var(--navy, #003459); margin-bottom: 0.6rem; }
+.rack-rule p { font-size: 0.9rem; color: var(--gray-600, #4b5563); margin-bottom: 0.75rem; }
+.rack-rule ol { margin: 0 0 0.75rem 1.1rem; }
+.rack-rule ol li {
+  font-size: 0.9rem;
+  color: var(--gray-600, #4b5563);
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+.rack-rule .rack-why {
+  font-size: 0.83rem;
+  border-top: 1px solid #fde68a;
+  padding-top: 0.7rem;
+  margin-bottom: 0;
+}
