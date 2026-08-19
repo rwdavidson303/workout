@@ -1,3 +1,9 @@
+> **ARCHIVED.** March 2026 nutrition plan, written around a 6-day week. Superseded by the recomposition targets in `PROGRAM.md` and `nutrition.html`.
+>
+> Kept for reference only. Do not follow.
+
+---
+
 # RD's Nutrition Plan — Body Recomposition
 
 **Created:** March 2026

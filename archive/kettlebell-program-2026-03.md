@@ -1,3 +1,9 @@
+> **ARCHIVED.** The original 13-exercise M/W/F kettlebell program. Retired 19 Aug 2026; kettlebells are now an equipment tier of the main program. See `PROGRAM.md`.
+>
+> Kept for reference only. Do not follow.
+
+---
+
 # Optimized Kettlebell Workout Program
 
 **Your 12 Exercises — Resequenced, Restructured, and Maximized**
