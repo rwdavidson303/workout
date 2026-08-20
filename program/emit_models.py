@@ -44,8 +44,8 @@ def emit_list(sess, tier):
 TIER_SUFFIX = {"full": "FULL", "dbonly": "DB_ONLY", "band": "BAND", "bw": "BODYWEIGHT", "kbl": "KB"}
 TIER_PREFIX = {"full": "db", "dbonly": "dbo", "band": "bnd", "bw": "bw", "kbl": "kbl"}
 TIER_ORDER = ["full", "dbonly", "band", "bw", "kbl"]
-LABEL = {"A": "A -- Upper (Press Lead)", "B": "B -- Upper (Row Lead)",
-         "C": "C -- Upper (Angles)", "LEGS": "Legs + Calves"}
+LABEL = {"A": "A - Upper (Press Lead)", "B": "B - Upper (Row Lead)",
+         "C": "C - Upper (Angles)", "LEGS": "Legs + Calves"}
 
 vol = P.weekly_sets()
 volume_line = ", ".join(f"{m} {n}" for m, n in vol.items())
