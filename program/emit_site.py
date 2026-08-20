@@ -3,8 +3,8 @@ import sys, io, os; sys.path.insert(0,'.')
 import program as P
 
 SITE = "/Users/richarddavidson/Desktop/Desktop - Mac/Claude/kettlebell-workout"
-SUBNAV = [("dumbbell.html","Overview"),("strength.html","A &middot; Push (M)"),("hypertrophy.html","B &middot; Pull (W)"),
-          ("metabolic.html","C &middot; Detail (F)"),("legs.html","Legs (Sat)"),
+SUBNAV = [("dumbbell.html","Overview"),("strength.html","A &middot; Upper (M)"),("hypertrophy.html","B &middot; Upper (W)"),
+          ("metabolic.html","C &middot; Upper (F)"),("legs.html","Legs (Sat)"),
           ("db-exercises.html","Exercises"),("db-progression.html","Progression")]
 
 RACK_RULE = '''        <div class="card rack-rule">
@@ -60,7 +60,7 @@ def table(sess, tier):
 ''')
     for i,(key,sets,lo,hi,rir,note) in enumerate(sess["ex"],1):
         disp,anchor = P.TIERS[key][tier]
-        timed = "sec" in disp
+        timed = P.is_timed(key, tier)
         window = "&mdash;" if timed else f"{lo}&ndash;{hi}"
         eff = "&mdash;" if timed else f'<strong>{rir} RIR</strong>'
         o.write(f'''              <tr>

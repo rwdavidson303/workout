@@ -7,17 +7,23 @@ Hand-editing either system will make them drift. Don't.
 
 | File | What it is |
 |---|---|
-| `program.py` | The single source of truth. Sessions, sets, rep windows, RIR targets, and the per-tier movement/anchor lookup. |
+| `program.py` | The single source of truth. Sessions, sets, rep windows, RIR targets, the per-tier movement/anchor lookup, the muscle map, and which combinations carry no external load. |
 | `emit_models.py` | Writes the `DB_PLANS` block into the Sofi tracker's `sofi/workout/models.py`. |
 | `emit_site.py` | Writes the four day pages (`strength.html`, `hypertrophy.html`, `metabolic.html`, `legs.html`). |
+| `emit_overview.py` | Writes the generated regions of `dumbbell.html` (session cards, week table, volume table, exercise pool). |
+| `emit_doc.py` | Writes `PROGRAM.md`, the human-readable reference. |
+| `verify.py` | Checks site against tracker and asserts the data invariants. Run it every time. |
 
 ## To change the program
 
 ```bash
 cd program
 # edit program.py
-python3 emit_models.py     # updates the tracker
-python3 emit_site.py       # updates the site
+python3 emit_models.py     # the tracker
+python3 emit_site.py       # the four day pages
+python3 emit_overview.py   # the overview page's numbers
+python3 emit_doc.py        # PROGRAM.md
+python3 verify.py          # must print PASS
 ```
 
 Then commit and push **both** repos. The tracker lives in a separate repo
@@ -27,55 +33,56 @@ GitHub Pages.
 `emit_models.py` writes to an absolute path into the sofi checkout. If that repo
 moves, update the `SOFI` constant at the top of the file.
 
+All five emitters are idempotent: running them repeatedly leaves both systems
+byte-identical.
+
 ## Structure of `program.py`
 
-- `TIERS` — maps a movement key (e.g. `incline_press`) to a `(display name, form-cue anchor)`
+- `TIERS` maps a movement key (e.g. `incline_press`) to a `(display name, form-cue anchor)`
   pair for each of the five equipment tiers.
-- `SESSIONS` — the four sessions. Each exercise row is
+- `SESSIONS` holds the four sessions. Each exercise row is
   `(movement_key, sets, rep_low, rep_high, rir, note)`.
-- `TIER_META` — tier ids, labels, and the blurb shown above each table.
+- `TIER_META` holds tier ids, labels, and the blurb shown above each table.
+- `MUSCLE` maps every movement key to exactly one primary muscle. The volume
+  tables on the site and in `PROGRAM.md` are counted from this, so they cannot
+  drift from the sessions the way the hand-typed ones did.
+- `NO_LOAD` lists, explicitly, which (key, tier) combinations carry no external
+  load. It is stated rather than guessed from the exercise name, so the tracker
+  never asks for a weight on a push-up or skips one on a loaded dip.
 
 Because sessions are defined by movement key and the tiers are just a name lookup,
 **a change to a session automatically applies to all five tiers.**
 
-## Invariants to preserve
+## Design rules the program follows
 
-These are checked by the verification snippet below. Break them and you corrupt data:
+1. **Every muscle, every session, at least two exercises.** Chest, back, all three
+   delt heads, traps, triceps, biceps, forearms and core on each upper day;
+   quads, hamstrings, glutes and calves on the leg day.
+2. **The two exercises must complement, not repeat.** One loads the muscle in its
+   stretched position, the other loads it short or from a different head.
+3. **Selection rotates across A, B and C** so each muscle sees six angles a week.
+4. **Effort is prescribed, not reps.** Every non-timed row carries a rep window
+   and an RIR target.
+
+`verify.py` enforces rule 1 mechanically. Rules 2 to 4 are on you.
+
+## Invariants that must not be broken
+
+These are checked by `verify.py`. Break them and you corrupt data:
 
 1. **No duplicate exercise name within a single session.** The tracker keys rows by
    `exercise_name`, and `get_last_exercise_weight()` becomes ambiguous between two slots
-   sharing a name.
+   sharing a name. This matters most on the `bw` and `band` tiers, where several
+   different movements collapse onto similar names.
 2. **No HTML entities in exercise names.** Names are database keys, not display strings.
    Put typographic flourishes in the site's `note` field instead.
 3. **Don't rename an exercise that has logged history** unless you intend to orphan its
    PRs. `workout_prs` is keyed by name.
 
-## Verify after regenerating
+## A warning about the old verification snippet
 
-```bash
-python3 - <<'PY'
-import re, sys, html as H
-sys.path.insert(0, "/Users/richarddavidson/Desktop/Desktop - Mac/Claude/sofi")
-sys.path.insert(0, ".")
-from sofi.workout.models import DB_PLANS
-import program as P
-PRE = {"full":"db","dbonly":"dbo","band":"bnd","bw":"bw","kbl":"kbl"}
-bad = []
-for s in P.SESSIONS.values():
-    h = open("../" + s["file"]).read()
-    for tier, pre in PRE.items():
-        wt = f'{pre}_{s["key"]}'
-        m = re.search(r'data-tier="%s">(.*?)\n        </div>\n' % tier, h, re.S)
-        site = [H.unescape(x) for x in re.findall(r'<td class="exercise-name">(.*?)</td>', m.group(1))]
-        for i, (a, e) in enumerate(zip(site, DB_PLANS[wt].exercises)):
-            if a != H.unescape(e.name):
-                bad.append(f"{wt} #{i+1}: site '{a}' vs tracker '{e.name}'")
-for k, v in DB_PLANS.items():
-    n = [e.name for e in v.exercises]
-    d = {x for x in n if n.count(x) > 1}
-    if d: bad.append(f"{k}: duplicate names {d}")
-    for e in v.exercises:
-        if "&" in e.name or ";" in e.name: bad.append(f"{k}: entity in '{e.name}'")
-print("\n".join(bad) if bad else "site and tracker agree; no duplicates; no entities")
-PY
-```
+The check that used to live in this README anchored on `data-tier="..."`, which
+matched the tier **tab button** before the tier **panel** and captured a region
+containing no exercise rows. Comparing an empty list to a full one passes, so it
+printed success without ever comparing a single name. `verify.py` anchors on the
+panel and asserts a non-zero row count, so it cannot fail open the same way.
